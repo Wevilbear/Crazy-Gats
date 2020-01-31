@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a5b8f582e127ce4baf36e27f4ee4d0f, type: 3}
-  m_Name: OpenDoor
+  m_Name: PlayerInteract
   m_EditorClassIdentifier: 

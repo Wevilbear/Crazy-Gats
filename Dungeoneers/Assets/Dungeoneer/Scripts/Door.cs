@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
 
 	public void Open()
 	{
-		if (isLocked)
+		if (!isLocked)
 			openSuccess.Invoke();
 		else
 			openFail.Invoke();
@@ -26,5 +26,6 @@ public class Door : MonoBehaviour
 	public void Lock()
 	{
 		isLocked = true;
+
 	}
 }
