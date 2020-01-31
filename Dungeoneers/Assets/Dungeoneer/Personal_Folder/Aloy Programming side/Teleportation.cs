@@ -4,41 +4,30 @@ using UnityEngine;
 
 public class Teleportation : MonoBehaviour
 {
-    Transform T_Target = null;
-    Transform T_Target2 = null;
-
-    bool B_Teleporter;
-    bool B_Teleporter_reciever;
+    public GameObject T_Target;
+    public GameObject T_Target2;
+    public GameObject Player;
+ 
+    //bool B_Teleporter;
+    //bool B_Teleporter_reciever;
 
     // Start is called before the first frame update
     void Start()
     {
-        B_Teleporter = false;
-        B_Teleporter_reciever = false;
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Teleport_1" && B_Teleporter == false && B_Teleporter_reciever == false)
+        if (other.gameObject.tag == "Player") //if player hit onto the game object of teleporter they will change area
         {
-            this.transform.position = T_Target.position;
-            B_Teleporter = true;
+            other.transform.position = new Vector2 (T_Target.transform.position.x - 15, T_Target.transform.position.y);//go to portal 1
+            //B_Teleporter = false;
         }
-        if (other.gameObject.tag == "Teleport_2" && B_Teleporter == false && B_Teleporter_reciever == false)
+        if (other.gameObject.tag == "Player") //if player hit onto the game object of teleporter they will change area
         {
-            this.transform.position = T_Target2.position;
-            B_Teleporter_reciever = true;
-        }
-    }
-    public void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Teleport_1")
-        {
-            B_Teleporter = true;
-        }
-        if (other.gameObject.tag == "Teleport_2")
-        {
-            B_Teleporter_reciever = true;
+            other.transform.position = new Vector2(T_Target2.transform.position.x - 15, T_Target2.transform.position.y); //go to portal 2
+            //B_Teleporter_reciever = false;
         }
     }
 }
