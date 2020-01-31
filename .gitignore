@@ -62,3 +62,4 @@ Dungeoneers/Library/
 Dungeoneers/ProjectSettings/
 Dungeoneers/Temp/
 Dungeoneers/Packages/manifest.json
+*.meta
