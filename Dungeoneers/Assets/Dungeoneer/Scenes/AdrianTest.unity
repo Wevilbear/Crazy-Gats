@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   interactDist: 1
+  interactLayer: Interactable
   interactEvent: {fileID: 11400000, guid: fcb4475f109501c4d9b4e44afbdb085d, type: 2}
 --- !u!212 &68678024
 SpriteRenderer:
@@ -312,7 +313,7 @@ GameObject:
   - component: {fileID: 117030470}
   - component: {fileID: 117030469}
   - component: {fileID: 117030471}
-  m_Layer: 4
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365345732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.81, y: 3.31, z: 0}
+  m_LocalPosition: {x: -2.81, y: 3.63, z: 0}
   m_LocalScale: {x: 0.22, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 480938660}
@@ -712,7 +713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876448196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.81, y: -1.49, z: 0}
+  m_LocalPosition: {x: -2.81, y: -1.76, z: 0}
   m_LocalScale: {x: 0.22, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 480938660}
@@ -911,7 +912,7 @@ GameObject:
   - component: {fileID: 1031716164}
   - component: {fileID: 1031716163}
   - component: {fileID: 1031716162}
-  m_Layer: 4
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1203,11 +1204,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1827143800}
   - component: {fileID: 1827143801}
-  - component: {fileID: 1827143803}
   - component: {fileID: 1827143802}
   - component: {fileID: 1827143805}
   - component: {fileID: 1827143804}
-  m_Layer: 4
+  - component: {fileID: 1827143803}
+  - component: {fileID: 1827143806}
+  m_Layer: 8
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1223,7 +1225,7 @@ Transform:
   m_GameObject: {fileID: 1827143799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.977, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.78115, z: 1}
   m_Children:
   - {fileID: 1031716161}
   m_Father: {fileID: 480938660}
@@ -1290,10 +1292,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eae546e03554884fbbf2e253399ccff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 0
+  isLocked: 1
   openSuccess:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1827143805}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   openFail:
     m_PersistentCalls:
       m_Calls:
@@ -1429,6 +1442,58 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.47, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1827143806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827143799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f92c671fe09c2418ea6b58c52fb2df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventBoolResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  EventDoubleResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  listeningToEvent: {fileID: 0}
+  EventDefaultResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  EventFloatResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  EventGameObjectResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  EventIntResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  EventObjectResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  EventQuaternionResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  EventStringResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  EventTransformResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  EventVector2Response:
+    m_PersistentCalls:
+      m_Calls: []
+  EventVector3Response:
+    m_PersistentCalls:
+      m_Calls: []
+  EventVector4Response:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1937463619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,7 +1521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937463619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.81, y: 1.53, z: 0}
+  m_LocalPosition: {x: -2.81, y: 1.8500001, z: 0}
   m_LocalScale: {x: 0.22, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 480938660}
@@ -1585,7 +1650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100839376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.81, y: -3.4, z: 0}
+  m_LocalPosition: {x: -2.81, y: -3.67, z: 0}
   m_LocalScale: {x: 0.22, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 480938660}

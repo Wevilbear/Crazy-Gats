@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
 	[SerializeField] int moveSpeed = 1;
 	[SerializeField] int interactDist = 1;
+	[SerializeField] string interactLayer = "Interactable";
 	[SerializeField] EventDefault interactEvent;
 
 	Rigidbody2D rb;
@@ -39,7 +40,7 @@ public class Player : MonoBehaviour
 	// --- PLAYER INTERACTION CODES --- //
 	public void Interact()
 	{
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, fakeForward, interactDist, 1 << LayerMask.NameToLayer("Water"));
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, fakeForward, interactDist, 1 << LayerMask.NameToLayer(interactLayer));
 		if (hit)
 		{
 			interactEvent.Invoke(hit.transform.gameObject.GetInstanceID());
