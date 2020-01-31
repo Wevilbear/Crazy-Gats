@@ -26,7 +26,7 @@ namespace ATXK.Systems.Event
 			string responsePropertyName = abstractedEvent.GetType().Name + "Response";
 			SerializedProperty property = serializedObject.FindProperty(responsePropertyName);
 
-			UnityEngine.Debug.Log("Property: " + responsePropertyName);
+			//UnityEngine.Debug.Log("Property: " + responsePropertyName);
 
 			// If property is not null, then display it.
 			if (property != null)
