@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Dungeoneers/Library/
+Dungeoneers/ProjectSettings/
+Dungeoneers/Temp/
