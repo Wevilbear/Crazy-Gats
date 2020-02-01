@@ -14,7 +14,7 @@ public class Unit : MonoBehaviour {
 	public float attackSpeed;
 	public float HP;
 	float timer;
-
+	public GameObject player;
 	void Start() {
 		pathObj = GameObject.FindGameObjectsWithTag(tagname);
 		StartCoroutine(RefreshPath());
@@ -25,7 +25,7 @@ public class Unit : MonoBehaviour {
 		{
 			//if (Input.GetMouseButtonDown(0))
 			//{
-				Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+				Vector3 playerPosition = player.transform.position;
 				//int arrayIndex = 0;
 				//float distanceCheck = 1000000.0f;
 
@@ -73,7 +73,7 @@ public class Unit : MonoBehaviour {
 	{
 		if(!attacked)
 		{
-			if((GameObject.FindGameObjectWithTag("Player").transform.position - transform.position).sqrMagnitude < 20 )
+			if((player.transform.position - transform.position).sqrMagnitude < 20 )
 			{
 				attacked = true;
 				timer = 0;
