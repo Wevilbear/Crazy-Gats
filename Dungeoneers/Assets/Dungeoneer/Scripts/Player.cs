@@ -13,11 +13,13 @@ public class Player : MonoBehaviour
 	Rigidbody2D rb;
 	Vector2 movement;
 	Vector2 fakeForward;
+	bool noodleArm;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		fakeForward = transform.forward;
+		noodleArm = false;
 	}
 
 	void Update()
@@ -35,6 +37,27 @@ public class Player : MonoBehaviour
 		rb.velocity = movement * moveSpeed;
 		if (rb.velocity.normalized != Vector2.zero)
 			fakeForward = rb.velocity.normalized;
+	}
+
+	public void Attack()
+	{
+		float range = 99999f;
+		if(!noodleArm)
+		{
+			range = 4f;
+		}
+		else
+		{
+			range = 15f;
+		}
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, fakeForward, range, 1 << LayerMask.NameToLayer("DamagedGoods"));
+		if(hit)
+		{
+			if(hit.transform.gameObject.GetComponent<Wall>())
+			{
+				hit.transform.gameObject.GetComponent<Wall>().wallHP -= 1;
+			}
+		}
 	}
 
 	// --- PLAYER INTERACTION CODES --- //
