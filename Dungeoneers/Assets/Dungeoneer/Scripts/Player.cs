@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
 	[SerializeField] List<StaffPart> requiredParts;
 	[SerializeField] UnityEventDefault staffComplete;
 
+	[Space]
+	[SerializeField] int attackDist = 1;
+
 	Rigidbody2D rb;
 	Vector2 movement;
 	Vector2 fakeForward;
@@ -37,7 +40,7 @@ public class Player : MonoBehaviour
 
 	void Update()
 	{
-		Debug.DrawRay(transform.position, fakeForward * interactDist, Color.red);
+		//Debug.DrawRay(transform.position, fakeForward * interactDist, Color.red);
 
 		Movement();
 		HandleStaff();
@@ -71,7 +74,8 @@ public class Player : MonoBehaviour
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, fakeForward, range, 1 << LayerMask.NameToLayer("DamagedGoods"));
 		if(hit)
 		{
-			if(hit.transform.CompareTag("Wall"))
+			Debug.DrawRay(transform.position, fakeForward * range, Color.red);
+			if (hit.transform.CompareTag("Wall"))
 			{
 				hit.transform.gameObject.GetComponent<Wall>().wallHP -= 1;
 				Debug.Log("Pow");

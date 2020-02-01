@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d6363f9693bdf34cb8388125be0eef0, type: 3}
+  m_Script: {fileID: 11500000, guid: cf1a7f887ee18bf4c9a4d6f523598b8c, type: 3}
   m_Name: Interact
   m_EditorClassIdentifier: 
-  keyName: 
+  keyName: Interact
   keyDescription: 
   keyDefault: 101
