@@ -23,7 +23,7 @@ public class SceneManage : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level_1");
     }
 
     public void ToExit()
