@@ -1,23 +1,33 @@
 ﻿
+using ATXK.Helpers.UnityEvents;
 using ATXK.Systems.Event;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
 	[SerializeField] int moveSpeed = 1;
+
+	[Space]
 	[SerializeField] int interactDist = 1;
 	[SerializeField] string interactLayer = "Interactable";
 	[SerializeField] EventDefault interactEvent;
 
+	[Space]
+	[SerializeField] List<StaffPart> requiredParts;
+	[SerializeField] UnityEventDefault staffComplete;
+
 	Rigidbody2D rb;
 	Vector2 movement;
 	Vector2 fakeForward;
+	bool staffCompleted;
 
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
 		fakeForward = transform.forward;
+		staffCompleted = false;
 	}
 
 	void Update()
@@ -25,6 +35,7 @@ public class Player : MonoBehaviour
 		Debug.DrawRay(transform.position, fakeForward * 10, Color.red);
 
 		Movement();
+		HandleStaff();
 	}
 
 	// --- PLAYER UPDATE CODES --- //
@@ -44,6 +55,29 @@ public class Player : MonoBehaviour
 		if (hit)
 		{
 			interactEvent.Invoke(hit.transform.gameObject.GetInstanceID());
+		}
+	}
+
+	// --- PLAYER ITEM PICKUP CODES --- //
+	public void PickUpItem(StaffPart item)
+	{
+		if (requiredParts.Contains(item))
+		{
+			requiredParts.Remove(item);
+			item.gameObject.SetActive(false);
+		}
+	}
+
+	void HandleStaff()
+	{
+		if (staffCompleted)
+			return;
+
+		// All parts collected.
+		if(requiredParts.Count <= 0)
+		{
+			staffCompleted = true;
+			staffComplete.Invoke();
 		}
 	}
 }
