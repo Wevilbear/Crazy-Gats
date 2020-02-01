@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bbf6223d207db040a188cb338aaaba1, type: 3}
+  m_Script: {fileID: 11500000, guid: 78832257d3f3530449b50b5fd9f454e4, type: 3}
   m_Name: UnlockEverything
   m_EditorClassIdentifier: 

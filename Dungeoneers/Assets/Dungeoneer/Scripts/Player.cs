@@ -71,10 +71,15 @@ public class Player : MonoBehaviour
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, fakeForward, range, 1 << LayerMask.NameToLayer("DamagedGoods"));
 		if(hit)
 		{
-			if(hit.transform.gameObject.GetComponent<Wall>())
+			if(hit.transform.CompareTag("Wall"))
 			{
 				hit.transform.gameObject.GetComponent<Wall>().wallHP -= 1;
 				Debug.Log("Pow");
+			}
+			if (hit.transform.CompareTag("Enemy"))
+			{
+				hit.transform.gameObject.GetComponent<Unit>().HP -= 1;
+				Debug.Log("bam");
 			}
 		}
 	}
