@@ -59,7 +59,6 @@ sysinfo.txt
 crashlytics-build.properties
 
 Dungeoneers/Library/
-Dungeoneers/ProjectSettings/
+#Dungeoneers/ProjectSettings/
 Dungeoneers/Temp/
 Dungeoneers/Packages/manifest.json
-*.meta

@@ -250,7 +250,7 @@ SpriteRenderer:
   m_Size: {x: 10.31, y: 5.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &224244392
@@ -541,7 +541,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1037306876
@@ -614,56 +614,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1037306874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62bef2d7f3b73bd43bfae336bb1e8224, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  interactDist: 1
-  interactLayer: Interactable
-  interactEvent: {fileID: 0}
-  requiredParts: []
-  staffComplete:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1037306880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037306874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f146066d4e25f545a7b465cf9bd9675, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f3e9e70bbb5d034f8f16cd149fa9728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputs:
-  - key: {fileID: 11400000, guid: b03829ec560cbd246b74ccb845cc7b06, type: 2}
+  - key: {fileID: 11400000, guid: 992679483d0d629418195cb9040fe016, type: 2}
     onKeyDown:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1037306879}
-          m_MethodName: Interact
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    onKeyUp:
-      m_PersistentCalls:
-        m_Calls: []
-    onKeyHeld:
-      m_PersistentCalls:
-        m_Calls: []
-  - key: {fileID: 11400000, guid: 121133fd45caf7c428e11e9cd5fc3fbd, type: 2}
-    onKeyDown:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1037306879}
+        - m_Target: {fileID: 1037306880}
           m_MethodName: Attack
           m_Mode: 1
           m_Arguments:
@@ -680,6 +639,47 @@ MonoBehaviour:
     onKeyHeld:
       m_PersistentCalls:
         m_Calls: []
+  - key: {fileID: 11400000, guid: b7ab2256b34cbf84f89044baa347eb2d, type: 2}
+    onKeyDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1037306880}
+          m_MethodName: Interact
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onKeyUp:
+      m_PersistentCalls:
+        m_Calls: []
+    onKeyHeld:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1037306880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037306874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3cc495b85382e40b15e586ff4a2418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  interactDist: 2
+  interactLayer: Interactable
+  interactEvent: {fileID: 11400000, guid: f04633cefc092eb4a92620afb553c8e8, type: 2}
+  requiredParts: []
+  staffComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1169547919
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +746,7 @@ SpriteRenderer:
   m_Size: {x: 1.57, y: 1.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1169547921
@@ -798,10 +798,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1169547919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a5a4cf14d2e7b429ef5429939c5876, type: 3}
+  m_Script: {fileID: 11500000, guid: 50591f964c806544d8bff944f79f2ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallHP: 10
+  wallHP: 5
 --- !u!50 &1169547924
 Rigidbody2D:
   serializedVersion: 4
@@ -1252,12 +1252,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1763952751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d157e9fd6c2b30546af5571349799774, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  follow: {fileID: 1037306874}
-  speed: 5
-  zOffset: -10
 --- !u!1 &1774713641
 GameObject:
   m_ObjectHideFlags: 0
