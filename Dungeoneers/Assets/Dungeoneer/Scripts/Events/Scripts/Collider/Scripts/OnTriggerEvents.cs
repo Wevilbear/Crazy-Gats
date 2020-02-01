@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ATXK.Helpers.Colliders
 {
-	[RequireComponent(typeof(Collider))]
+	[RequireComponent(typeof(Collider2D))]
 	public class OnTriggerEvents : MonoBehaviour
 	{
 		// -- Field Values
@@ -12,17 +12,17 @@ namespace ATXK.Helpers.Colliders
 		[SerializeField] UnityEventGameObject onTriggerStay;
 
 		// -- Private Functions
-		private void OnTriggerEnter(Collider other)
+		private void OnTriggerEnter2D(Collider2D other)
 		{
 			onTriggerEnter.Invoke(other.gameObject);
 		}
 
-		private void OnTriggerExit(Collider other)
+		private void OnTriggerExit2D(Collider2D other)
 		{
 			onTriggerExit.Invoke(other.gameObject);
 		}
 
-		private void OnTriggerStay(Collider other)
+		private void OnTriggerStay2D(Collider2D other)
 		{
 			onTriggerStay.Invoke(other.gameObject);
 		}
