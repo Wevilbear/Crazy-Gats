@@ -19,26 +19,27 @@ public class Unit : MonoBehaviour {
 	IEnumerator RefreshPath() {
 		while (true)
 		{
-			if (Input.GetMouseButtonDown(0))
-			{
-				Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				int arrayIndex = 0;
-				float distanceCheck = 1000000.0f;
+			//if (Input.GetMouseButtonDown(0))
+			//{
+				Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+				//int arrayIndex = 0;
+				//float distanceCheck = 1000000.0f;
 
-				for (int i = 0; i < pathObj.Length; i++)
-				{
-					if (distanceCheck > ((Vector2)mousePosition - (Vector2)pathObj[i].transform.position).magnitude)
-					{
-						distanceCheck = ((Vector2)mousePosition - (Vector2)pathObj[i].transform.position).magnitude;
-						arrayIndex = i;
-					}
-				}
-				path = Pathfinding.RequestPath(transform.position, (Vector2)pathObj[arrayIndex].transform.position);
+				//for (int i = 0; i < pathObj.Length; i++)
+				//{
+				//	if (distanceCheck > ((Vector2)playerPosition - (Vector2)pathObj[i].transform.position).magnitude)
+				//	{
+				//		distanceCheck = ((Vector2)playerPosition - (Vector2)pathObj[i].transform.position).magnitude;
+				//		arrayIndex = i;
+				//	}
+				//}
+				path = Pathfinding.RequestPath(transform.position, (Vector2)playerPosition);
 				StopCoroutine("FollowPath");
 				StartCoroutine("FollowPath");
-			}
-			yield return new WaitForSeconds(.01f);
+			yield return new WaitForSeconds(.25f);
 		}
+
+		//}
 
 	}
 		
