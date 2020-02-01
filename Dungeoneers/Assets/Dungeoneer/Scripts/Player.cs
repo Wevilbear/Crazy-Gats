@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 
 	void Update()
 	{
-		Debug.DrawRay(transform.position, fakeForward * 10, Color.red);
+		Debug.DrawRay(transform.position, fakeForward * interactDist, Color.red);
 
 		Movement();
 		HandleStaff();
@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 			if(hit.transform.gameObject.GetComponent<Wall>())
 			{
 				hit.transform.gameObject.GetComponent<Wall>().wallHP -= 1;
+				Debug.Log("Pow");
 			}
 		}
 	}

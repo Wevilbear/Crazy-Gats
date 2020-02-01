@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbe48629ef62cc499808761dc569d37, type: 3}
   m_Name: Attack
   m_EditorClassIdentifier: 
-  keyName: 
+  keyName: Attack
   keyDescription: 
   keyDefault: 113
