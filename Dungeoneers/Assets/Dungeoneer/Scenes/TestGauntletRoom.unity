@@ -242,7 +242,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a14bbe3c1dca2474cb3724e67e49701b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b78e6b2012559d4e97b85193b560899, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -250,7 +250,7 @@ SpriteRenderer:
   m_Size: {x: 10.31, y: 5.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &224244392
@@ -533,15 +533,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a10b588089997f24ea8dbe1121c5d7f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2ef387bd9ba6054184f1c56df9a29de, type: 3}
   m_Color: {r: 1, g: 0, b: 0.84696007, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1.68}
+  m_Size: {x: 0.99, y: 1.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1037306876
@@ -596,8 +596,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.68}
-    newSize: {x: 1, y: 1.68}
+    oldSize: {x: 0.99, y: 1.72}
+    newSize: {x: 0.99, y: 1.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -614,36 +614,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1037306874}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3cc495b85382e40b15e586ff4a2418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  interactDist: 1
+  interactLayer: Interactable
+  interactEvent: {fileID: 0}
+  requiredParts: []
+  staffComplete:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1037306880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037306874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f3e9e70bbb5d034f8f16cd149fa9728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputs:
-  - key: {fileID: 11400000, guid: 992679483d0d629418195cb9040fe016, type: 2}
-    onKeyDown:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1037306880}
-          m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    onKeyUp:
-      m_PersistentCalls:
-        m_Calls: []
-    onKeyHeld:
-      m_PersistentCalls:
-        m_Calls: []
   - key: {fileID: 11400000, guid: b7ab2256b34cbf84f89044baa347eb2d, type: 2}
     onKeyDown:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1037306880}
+        - m_Target: {fileID: 1037306879}
           m_MethodName: Interact
           m_Mode: 1
           m_Arguments:
@@ -660,26 +659,27 @@ MonoBehaviour:
     onKeyHeld:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &1037306880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037306874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3cc495b85382e40b15e586ff4a2418, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  interactDist: 2
-  interactLayer: Interactable
-  interactEvent: {fileID: 11400000, guid: f04633cefc092eb4a92620afb553c8e8, type: 2}
-  requiredParts: []
-  staffComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  - key: {fileID: 11400000, guid: 992679483d0d629418195cb9040fe016, type: 2}
+    onKeyDown:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1037306879}
+          m_MethodName: Attack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onKeyUp:
+      m_PersistentCalls:
+        m_Calls: []
+    onKeyHeld:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1169547919
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +738,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 095a541e0bed9644cb7ea00846c3dd24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ceae8b8581fd1d04c92549fd35d54a33, type: 3}
   m_Color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -746,7 +746,7 @@ SpriteRenderer:
   m_Size: {x: 1.57, y: 1.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1169547921
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50591f964c806544d8bff944f79f2ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallHP: 5
+  wallHP: 10
 --- !u!50 &1169547924
 Rigidbody2D:
   serializedVersion: 4
@@ -1252,9 +1252,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1763952751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 116d1eab8813b6b4ab3937db7104f485, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  follow: {fileID: 1037306874}
+  speed: 5
+  zOffset: -10
 --- !u!1 &1774713641
 GameObject:
   m_ObjectHideFlags: 0
