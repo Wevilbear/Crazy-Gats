@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 			if(hit.transform.gameObject.GetComponent<Wall>())
 			{
 				hit.transform.gameObject.GetComponent<Wall>().wallHP -= 1;
+				Debug.Log("Pow");
 			}
 		}
 	}
