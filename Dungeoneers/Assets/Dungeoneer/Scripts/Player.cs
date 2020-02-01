@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
 	[SerializeField] int moveSpeed = 1;
 
 	[Space]
+	[SerializeField] Animator animator;
+
+	[Space]
 	[SerializeField] int interactDist = 1;
 	[SerializeField] string interactLayer = "Interactable";
 	[SerializeField] EventDefault interactEvent;
@@ -38,6 +41,10 @@ public class Player : MonoBehaviour
 
 		Movement();
 		HandleStaff();
+
+		animator.SetFloat("Horizontal", fakeForward.x);
+		animator.SetFloat("Vertical", fakeForward.y);
+		animator.SetFloat("Speed", rb.velocity.magnitude);
 	}
 
 	// --- PLAYER UPDATE CODES --- //
