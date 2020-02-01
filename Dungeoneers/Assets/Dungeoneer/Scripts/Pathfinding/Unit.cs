@@ -10,6 +10,10 @@ public class Unit : MonoBehaviour {
 	GameObject[] pathObj;
 	int targetIndex;
 	public string tagname;
+	bool attacked;
+	public float attackSpeed;
+	public float HP;
+	float timer;
 
 	void Start() {
 		pathObj = GameObject.FindGameObjectsWithTag(tagname);
@@ -65,6 +69,27 @@ public class Unit : MonoBehaviour {
 		}
 	}
 
+	public void Update()
+	{
+		if(!attacked)
+		{
+			if((GameObject.FindGameObjectWithTag("Player").transform.position - transform.position).sqrMagnitude < 20 )
+			{
+				attacked = true;
+				timer = 0;
+			}
+
+		}
+		timer += Time.deltaTime;
+		if(timer >= attackSpeed)
+		{
+			attacked = false;
+		}
+		if(HP <= 0)
+		{
+			gameObject.SetActive(false);
+		}
+	}
 	public void OnDrawGizmos() {
 		if (path != null) {
 			for (int i = targetIndex; i < path.Length; i ++) {
