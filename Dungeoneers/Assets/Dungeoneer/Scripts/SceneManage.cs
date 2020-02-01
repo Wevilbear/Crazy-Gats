@@ -8,11 +8,11 @@ public class SceneManage : MonoBehaviour
 {
     public Button To_Game;
     public Button Exit;
-
+    public Animation Fader;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Fader.Play();
     }
 
     // Update is called once per frame
